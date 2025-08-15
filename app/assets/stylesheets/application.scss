@@ -10,3 +10,13 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
+
+// app/assets/stylesheets/application.scss
+// (garde éventuellement les imports Bootstrap ici)
+@import "components/variables";
+@import "components/base";
+@import "components/button";
+@import "components/card";
+@import "components/badge";
+@import "components/grid";
+

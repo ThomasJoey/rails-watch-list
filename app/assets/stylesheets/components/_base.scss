@@ -1,0 +1,11 @@
+// app/assets/stylesheets/components/_base.scss
+@import "variables";
+
+body { color: $color-text; background: #f8f9fa; }
+.container-narrow { max-width: 920px; margin: 0 auto; padding: $space-6 $space-4; }
+
+.page-header {
+  display:flex; justify-content:space-between; align-items:end; gap:$space-4; margin-bottom:$space-5;
+  h1 { margin:0; }
+  p  { color:$color-muted; margin:0; }
+}

@@ -1,0 +1,7 @@
+// app/assets/stylesheets/components/_badge.scss
+@import "variables";
+
+.badge {
+  display:inline-block; padding:.25rem .6rem; border-radius:999px;
+  font-size:.8rem; background:#eef2ff; color:#3b5bdb; font-weight:600;
+}

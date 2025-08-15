@@ -1,0 +1,24 @@
+<%# app/views/lists/index.html.erb %>
+<div class="container-narrow">
+  <div class="page-header">
+    <div>
+      <h1>Movies List of the yeaaaarrr</h1>
+      <p><%= pluralize(@lists.size, "list") %> au total</p>
+    </div>
+    <%= link_to "Add a new lists", new_list_path, class: "btn btn--primary" %>
+  </div>
+
+  <div class="grid">
+    <% @lists.each do |list| %>
+      <% cover = list.bookmarks.first&.movie&.poster_url %>
+      <% count = list.bookmarks.count %>
+      <%= link_to list_path(list), class: "card card--link" do %>
+        <div class="card__media" style="background-image:url('<%= cover %>')"></div>
+        <div class="card__body">
+          <h3 class="card__title"><%= list.name %></h3>
+          <span class="badge"><%= pluralize(count, "movie") %></span>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+</div>

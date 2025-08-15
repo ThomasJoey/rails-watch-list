@@ -1,0 +1,11 @@
+// app/assets/stylesheets/components/_button.scss
+@import "variables";
+
+.btn {
+  display:inline-block; border:1px solid transparent; border-radius:.6rem;
+  padding:.55rem .9rem; text-decoration:none; font-weight:600; transition:.15s;
+}
+.btn--primary { background:$color-primary; color:#fff; }
+.btn--primary:hover { filter:brightness(.95); }
+.btn--ghost  { background:transparent; border-color:#dee2e6; color:$color-text; }
+.btn--ghost:hover { background:#f1f3f5; }

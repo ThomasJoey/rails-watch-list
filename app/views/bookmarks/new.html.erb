@@ -1,0 +1,23 @@
+
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-10 col-sm-offset-1">
+      <h1>Create a new bookmark</h1>
+
+      <%= simple_form_for [@list, @bookmark], html: { id: "bookmark-form", novalidate: false } do |f| %>
+        <%= f.input :comment,
+              label: "Comment (min 6 chars)",
+              input_html: {
+                minlength: 6,
+                required: true,
+                oninvalid: "this.setCustomValidity('Le commentaire doit faire au moins 6 caractères')",
+                oninput:   "this.setCustomValidity('')"
+              } %>
+
+        <%= f.association :movie %>
+        <%= f.submit "Save", class: 'btn btn-primary' %>
+      <% end %>
+
+    </div>
+  </div>
+</div>

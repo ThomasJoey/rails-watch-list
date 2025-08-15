@@ -1,0 +1,35 @@
+<%# app/views/lists/show.html.erb %>
+<% cover = @list.bookmarks.first&.movie&.poster_url %>
+
+<div class="container-narrow">
+  <div class="page-header">
+    <h1><%= @list.name %></h1>
+    <div>
+      <%= link_to "Add a movie", new_list_bookmark_path(@list), class: "btn btn--primary" %>
+      <%= link_to "Back to lists", lists_path, class: "btn btn--ghost" %>
+    </div>
+  </div>
+
+  <% if cover.present? %>
+    <div class="card mb-4">
+      <div class="card__media" style="background-image:url('<%= cover %>'); aspect-ratio: 21/9;"></div>
+    </div>
+  <% end %>
+
+  <div class="grid">
+    <% @list.bookmarks.each do |bookmark| %>
+      <% movie = bookmark.movie %>
+      <div class="card">
+        <div class="card__media" style="background-image:url('<%= movie.poster_url %>')"></div>
+        <div class="card__body">
+          <h3 class="card__title"><%= movie.title %></h3>
+          <p class="text-muted" style="margin:.25rem 0 .5rem 0;"><%= truncate(movie.overview, length: 140) %></p>
+          <span class="badge"><%= movie.rating %>/10</span>
+          <% if bookmark.comment.present? %>
+            <p style="margin:.75rem 0 0 0;"><strong>Comment:</strong> <%= bookmark.comment %></p>
+          <% end %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

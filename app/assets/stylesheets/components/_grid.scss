@@ -1,0 +1,6 @@
+// app/assets/stylesheets/components/_grid.scss
+@import "variables";
+
+.grid { display:grid; gap:$space-4; }
+@media (min-width: 576px) { .grid { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 992px) { .grid { grid-template-columns: repeat(3, 1fr); } }
